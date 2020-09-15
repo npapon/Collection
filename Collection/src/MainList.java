@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class MainList {
 
@@ -64,6 +67,69 @@ public class MainList {
         for ( int i = 0, c = listExemple.size(); i < c; i++ ) {
 
             System.out.println( listExemple.get( i ) );
+
+        }
+
+        System.out.println( "On mélange la liste" );
+        Collections.shuffle( listExemple );
+
+        Iterator iterateur2 = listExemple.iterator();
+        while ( iterateur2.hasNext() ) {
+            System.out.println( iterateur2.next() );
+        }
+
+        System.out.println( "sous-liste" );
+
+        List<String> subListExemple = listExemple.subList( 2, 4 );
+
+        iterateur2 = subListExemple.iterator();
+        while ( iterateur2.hasNext() ) {
+            System.out.println( iterateur2.next() );
+        }
+
+        System.out.println( "list inversée" );
+        List<Character> listChar = new ArrayList<Character>();
+
+        listChar.add( 'a' );
+        listChar.add( 'b' );
+        listChar.add( 'c' );
+        listChar.add( 'd' );
+
+        Iterator iterateur3 = listChar.iterator();
+        while ( iterateur3.hasNext() ) {
+            System.out.println( iterateur3.next() );
+        }
+
+        System.out.println( "--------" );
+        Collections.reverse( listChar );
+        iterateur3 = listChar.iterator();
+
+        while ( iterateur3.hasNext() ) {
+            System.out.println( iterateur3.next() );
+        }
+
+        System.out.println( "Changer une valeur de la liste pendant son parcours grâce à ListIterator" );
+
+        ListIterator<Character> listIterateur = listChar.listIterator();
+
+        System.out.println( "On change le b par un z" );
+
+        while ( listIterateur.hasNext() ) {
+
+            Character caractere = listIterateur.next();
+            if ( caractere.equals( 'b' ) ) {
+                listIterateur.set( 'z' );
+
+            }
+
+        }
+
+        System.out.println( "On réinitie le listIterator et on reparcoure" );
+        listIterateur = listChar.listIterator();
+
+        while ( listIterateur.hasNext() ) {
+
+            System.out.println( listIterateur.next() );
 
         }
 
