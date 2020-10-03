@@ -12,6 +12,7 @@ public class CD implements Comparable {
     }
 
     public String toString() {
+
         return "CD [auteur=" + auteur + ", titre=" + titre + ", prix=" + prix
                 + "]";
     }
