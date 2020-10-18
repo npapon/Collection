@@ -1,7 +1,5 @@
 import java.util.EnumSet;
 
-import enums.Jours;
-
 public class MainEnumSet {
 
     public static void main( String[] args ) {
@@ -25,7 +23,7 @@ public class MainEnumSet {
 
         // créé une sous collection :
 
-        EnumSet<Jours> sousEnumJours = enumJours.range( Jours.LUNDI, Jours.MERCREDI );
+        EnumSet<Jours> sousEnumJours = enumJours.range( Jours.MONDAY, Jours.THURSDAY );
         System.out.println( sousEnumJours );
         // [lundi, mardi, mercredi]
 
